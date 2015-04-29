@@ -18,7 +18,10 @@
 // parse args
 var i, arg, page, urlCount, viewport,
     webpage = require('webpage'),
-    args = phantom.args,
+    system = require('system'),
+    args = system.args,
+    args = Array.prototype.slice.call(args),
+    args = args.slice(1),
     len = args.length,
     urls = [],
     yslowArgs = {
